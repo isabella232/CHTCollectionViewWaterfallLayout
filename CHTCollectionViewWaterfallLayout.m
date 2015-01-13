@@ -352,7 +352,7 @@ const NSInteger unionSize = 20;
     }
     
     CGSize contentSize = self.collectionView.bounds.size;
-    contentSize.height = [self.columnHeights[0] floatValue];
+    contentSize.height = [[self.columnHeights valueForKeyPath:@"@max.self"] floatValue];
     
     return contentSize;
 }
